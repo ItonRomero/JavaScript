@@ -11,5 +11,9 @@ let count = 0
  function increment() {
     count = count + 1
     countel.innerText = count
+
+ }
+
+ function save(){
     console.log(count)
  }
