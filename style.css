@@ -6,10 +6,12 @@
 
 body {
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial sans-serif' ;
 }
 
 h1 {
     font-size: 40px;
+    color:  goldenrod;
 }
 
 h2 {
@@ -20,9 +22,7 @@ h2 {
 button {
     padding: 10px 30px;
     margin: 10px;
-    width: 50%;
-   
-    
+    width: 50%;  
 }
 
 .btns {
@@ -30,4 +30,20 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.section {
+    background-color: rgb(208, 218, 218);
+    padding: 10px;
+    margin: 10px;
+}
+
+#error-msg {
+    color: red;
+}
+
+span {
+    font-size: 50px;
+    margin: 10px;
+    border-bottom: solid 1px black;
 }
