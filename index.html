@@ -8,42 +8,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="section Poeple-entered">
-        <h1>People entered:</h1>
-        <h2 id="count-el">0</h2>
-        <div class="btns">
-            <button id="increment-btn" onclick="increment()">INCREMENT</button>
-            <button id="save-btn" onclick="save()">SAVE</button>
-        </div>  
-        <p id="save-el">Previous entires: </p>
-        <p id="error-msg"></p>
-    </div>  
 
-    <div class="section basic-calculator">
-        <h1>Basic Calculator:</h1>
-        <span id="num1-el"></span>
-        <span id="num2-el"></span>
-        <div class="btns">
-            <button id="add-btn" onclick="add()">Add</button>
-            <button id="subtract-btn" onclick="subtract()">Subtract</button>
-            <button id="divide-btn" onclick="divide()">Divide</button>
-            <button id="multiply-btn" onclick="multiply()">Multiply</button>
+<!-- PEOPLE ENTERED SECTION -->
+        <div class="section Poeple-entered">
+            <h1>People entered:</h1>
+            <h2 id="count-el">0</h2>
+            <div class="btns">
+                <button id="increment-btn" onclick="increment()">INCREMENT</button>
+                <button id="save-btn" onclick="save()">SAVE</button>
+            </div>  
+            <p id="save-el">Previous entires: </p>
+            <p id="error-msg"></p>
         </div>  
-        <span id="total-el">Total: </span>
-    </div>  
+<!-- END OF PEOPLE ENTERED SECTION -->
 
-    <div class="section blackjack">
-        <h1>Blackjack</h1>
-        <p id="message-el">Want to play a round?</p>
-        <p>Cards: </p> 
-        <p>Sum: </p>
-        <div class="btns">
-            <button id="start-game" onclick="start()">START GAME</button>
-            <button id="new-card" onclick="newcard()">NEW CARD</button>
+<!-- BASIC CALCULATOR SECTION -->
+        <div class="section basic-calculator">
+            <h1>Basic Calculator:</h1>
+            <span id="num1-el"></span>
+            <span id="num2-el"></span>
+            <div class="btns">
+                <button id="add-btn" onclick="add()">Add</button>
+                <button id="subtract-btn" onclick="subtract()">Subtract</button>
+                <button id="divide-btn" onclick="divide()">Divide</button>
+                <button id="multiply-btn" onclick="multiply()">Multiply</button>
+            </div>  
+            <span id="total-el">Total: </span>
         </div>  
-        <span id="total-el">Total: </span>
-    </div>  
+<!-- END OF BASIC CALCULATOR SECTION -->
 
+<!-- BLACKJACK SECTION -->
+        <div class="section blackjack">
+            <h1>Blackjack</h1>
+            <p id="message-el">Want to play a round?</p>
+            <p id="card-el">Cards: </p> 
+            <p id="sum-el">Sum: </p>
+            <div class="btns">
+                <button id="start-game" onclick="startGame()">START GAME</button>
+                <button id="new-card" onclick="newCard()">NEW CARD</button>
+            </div>  
+            <p id="player-el"></p>
+        </div>  
+<!-- END OF  BLACKJACK SECTION -->
 
 
 

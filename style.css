@@ -22,7 +22,8 @@ h2 {
 button {
     padding: 10px 30px;
     margin: 10px;
-    width: 50%;  
+    width: 150px;
+    background: goldenrod;  
 }
 
 .btns {

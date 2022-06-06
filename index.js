@@ -1,5 +1,5 @@
 
-
+// PEOPLE ENTERED COUNT SECTION
 
 let errorMsg = document.getElementById("error-msg")
 let saveEl = document.getElementById("save-el")
@@ -27,8 +27,8 @@ let count = 0
 }
 
 
-// -------------------------------------------
-
+// ----------------------------------------------------------------------------------
+// BASIC CALCULATOR SECTION
 
 
 let num1 = 8
@@ -59,17 +59,53 @@ function subtract(){
 
 
 
- // -------------------------------------------
-//  document.getElementById("card1-el").textContent = card1 
-//  document.getElementById("card2-el").textContent = card2
- let card1 = 12
- let card2 = 20 
-let sum = card1 + card2
+ // ------------------------------------------------------------------------------
+// BLACKJACK SECTION
+
+let cards = []
+let sum = 0
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEL = document.getElementById("sum-el")
+let cardEl = document.querySelector("#card-el")
+
+let player = {
+    name: "Iton",
+    chips: 154
+}
+
+let playerEl = document.querySelector("#player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 
+function getRandomCard() {
+   let randomNumber =  Math.floor(Math.random() * 13) + 1
+   if (randomNumber > 10) {
+      return 10
+   } else if (randomNumber === 1) {
+      return 11 
+   } else {
+      return randomNumber
+   }
+}
+ 
+function startGame(){
+   isAlive = true
+   let card1 = getRandomCard()
+   let card2 = getRandomCard()
+   cards = [card1, card2]
+   sum = card1 + card2
+   renderGame()
+
+}
+function renderGame(){
+   cardEl.textContent = "Cards: "
+   for ( let i = 0; i < cards.length ; i++ ) {
+      cardEl.textContent += cards[i] + " "
+   }
+   sumEL.textContent = "Sum: " + sum
 if (sum <= 20) {
    message = "Do you want to draw new card?"
 } else if (sum === 21) {
@@ -79,5 +115,20 @@ if (sum <= 20) {
    message =  "You're out of the game"
    isAlive = false
 } 
+   messageEl.textContent = (message)
+}
 
-console.log(message)
+function newCard(){
+   if ( isAlive === true && hasBlackJack === false)   {
+   let card = getRandomCard()
+   sum += card
+   cards.push(card)
+   renderGame()
+   } else {
+      console.log("unable")
+   }
+
+}
+
+
+ 
