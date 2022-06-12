@@ -143,35 +143,79 @@ let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
-
-
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"))
-console.log(leadsFromLocalStorage)
+const deleteBtn = document.getElementById("delete-btn")
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"))
+const saveBtn = document.getElementById("save-btn")
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
+
+saveBtn.addEventListener("click", function(){
+  console.log("save")
+})
+
+
+function render(Leads){
+   let listItems = ""
+   for (let i = 0; i < Leads.length; i++) {
+      //listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+      listItems += `
+                  <li>
+                        <a target='_blank' href='${Leads[i]}'>${Leads[i]}</a>
+                  </li>
+                   `
+   } 
+      ulEl.innerHTML = listItems
+   }
+   
+
+deleteBtn.addEventListener("click", function(){
+   localStorage.clear()
+   myLeads = []
+   render(myLeads)
+})
 
 inputBtn.addEventListener("click", function(){
    myLeads.push(inputEl.value)
     inputEl.value = ""
     
    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-   renderLeads()
+   render(myLeads)
 
    console.log( localStorage.getItem("myLeads"))
 })
  
-function renderLeads(){
-let listItems = ""
-for (let i = 0; i < myLeads.length; i++) {
-   //listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
-   listItems += `
-               <li>
-                     <a target='_blank' href='${myLeads[i]}'>${myLeads[i]}</a>
-               </li>
-                `
-} 
-   ulEl.innerHTML = listItems
+
+
+
+
+
+
+const welcomEL = document.getElementById("welcome-el")
+
+//                  parameters
+function greetUser(greeting, name) {
+welcomEL.textContent =  `${greeting}, ${name} `
+
 }
+//         arguments
+greetUser("wazuup-iton")
+
+
+//          parameters
+function add(num1, num2) {
+   return num1 + num2
+}
+//       arguments
+console.log( add(3, 4 ) )
+
+
+
+function getFirst(arr){
+   return arr[0]
+}
+
+let firstCard = getFirst([10, 2, 5])
+console.log(firstCard)
